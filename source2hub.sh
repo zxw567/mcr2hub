@@ -13,6 +13,7 @@ then
     docker tag ${key} ${value}
     docker push ${value}
     docker rmi ${key} -f
+    docker rmi ${value} -f
   done < "$file"
 
 else
