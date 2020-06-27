@@ -1,6 +1,6 @@
-#!/bin/bash
+#/bin/bash
 
-file="mcr_images.properties"
+file="images.properties"
 
 if [ -f "$file" ]
 then
@@ -9,11 +9,10 @@ then
   while IFS='=' read -r key value
   do
     #echo "${key}=${value}"
-    docker pull ${value}
-    docker tag ${value} ${key}
-    docker push ${key}
-    docker rmi ${value}
-    docker rmi ${key}
+    docker pull ${key}
+    docker tag ${key} ${value}
+    docker push ${value}
+    docker rmi ${key} -fs
   done < "$file"
 
 else
