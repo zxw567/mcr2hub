@@ -12,7 +12,7 @@ then
     docker pull ${key}
     docker tag ${key} ${value}
     docker push ${value}
-    docker rmi ${key} -fs
+    docker rmi ${key} -f
   done < "$file"
 
 else
