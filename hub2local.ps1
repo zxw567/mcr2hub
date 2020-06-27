@@ -1,4 +1,4 @@
-foreach($line in Get-Content .\mcr_images.properties) {
+foreach($line in Get-Content .\images.properties) {
     $data = $line.Split('=')
     $key = $data[0];
     $value = $data[1];

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file="mcr_images.properties"
+file="images.properties"
 
 if [ -f "$file" ]
 then
